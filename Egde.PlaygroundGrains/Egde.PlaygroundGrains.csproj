@@ -5,6 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Egde.ApiPollerClient\Egde.ApiPollerClient.csproj" />
       <ProjectReference Include="..\Egde.PlaygroundGrainInterfaces\Egde.PlaygroundGrainInterfaces.csproj" />
     </ItemGroup>
 

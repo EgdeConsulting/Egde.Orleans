@@ -8,6 +8,8 @@ using Microsoft.Extensions.Logging;
 using Orleans;
 using Orleans.Configuration;
 using Orleans.Hosting;
+using Egde.ApiPollerClient;
+using Refit;
 
 namespace Egde.SiloHost
 {
@@ -47,6 +49,10 @@ namespace Egde.SiloHost
                     options.ClusterId = "dev";
                     options.ServiceId = "OrleansBasics";
                 })
+                .ConfigureServices((_, collection) =>
+                {
+                    collection.AddRefitClients();
+                })
                 .ConfigureApplicationParts(parts =>
                     parts.AddApplicationPart(typeof(TempReaderGrain).Assembly).WithReferences())
                 .ConfigureLogging(logging => logging.AddConsole());
@@ -56,7 +62,6 @@ namespace Egde.SiloHost
                 {
                     // Use the service provider to get the grain factory.
                     var grainFactory = services.GetRequiredService<IGrainFactory>();
-
                     // Get a reference to a grain and call a method on it.
                     var grain = grainFactory.GetGrain<IApiPullerGrain>(0);
                     await grain.Init();
