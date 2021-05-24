@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
+using Egde.PlaygroundGrainInterfaces;
 using Egde.PlaygroundGrains;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Orleans;
 using Orleans.Configuration;
@@ -48,6 +51,16 @@ namespace Egde.SiloHost
                     parts.AddApplicationPart(typeof(TempReaderGrain).Assembly).WithReferences())
                 .ConfigureLogging(logging => logging.AddConsole());
 
+            builder.AddStartupTask(
+                async (IServiceProvider services, CancellationToken cancellation) =>
+                {
+                    // Use the service provider to get the grain factory.
+                    var grainFactory = services.GetRequiredService<IGrainFactory>();
+
+                    // Get a reference to a grain and call a method on it.
+                    var grain = grainFactory.GetGrain<IApiPullerGrain>(0);
+                    await grain.Init();
+                });
             var host = builder.Build();
             await host.StartAsync();
             return host;
