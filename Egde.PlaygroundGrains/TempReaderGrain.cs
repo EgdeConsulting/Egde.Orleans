@@ -7,9 +7,13 @@ namespace Egde.PlaygroundGrains
 {
     public class TempReaderGrain : Grain, ITempReaderGrain
     {
-        public Task<string> Update(string temperature)
+        public new virtual IGrainFactory GrainFactory => base.GrainFactory;
+
+        public async Task<string> Update(string temperature)
         {
-            return Task.FromResult($"Got a temperature reading of: [{temperature}] !");
+            var orchestratorGrain = GrainFactory.GetGrain<ITempReaderOrchestratorGrain>(0);
+            await orchestratorGrain.Notify(this.GetPrimaryKeyString(), temperature);
+            return $"Got a temperature reading of: [{temperature}] !";
         }
     }
 }

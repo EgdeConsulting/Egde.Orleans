@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Egde.PlaygroundGrains", "Eg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Egde.SiloClient", "Egde.SiloClient\Egde.SiloClient.csproj", "{2AEDC343-E2C1-4343-88CF-4F7EF79F934E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Egde.SiloTests", "Egde.SiloTests\Egde.SiloTests.csproj", "{C0F9CC39-C6BA-4894-AB00-1C7EDD9DBDEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{2AEDC343-E2C1-4343-88CF-4F7EF79F934E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AEDC343-E2C1-4343-88CF-4F7EF79F934E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AEDC343-E2C1-4343-88CF-4F7EF79F934E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0F9CC39-C6BA-4894-AB00-1C7EDD9DBDEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F9CC39-C6BA-4894-AB00-1C7EDD9DBDEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F9CC39-C6BA-4894-AB00-1C7EDD9DBDEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F9CC39-C6BA-4894-AB00-1C7EDD9DBDEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
