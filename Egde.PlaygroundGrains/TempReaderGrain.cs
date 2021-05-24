@@ -7,9 +7,9 @@ namespace Egde.PlaygroundGrains
 {
     public class TempReaderGrain : Grain, ITempReaderGrain
     {
-        public Task Update(string temperature)
+        public Task<string> Update(string temperature)
         {
-            throw new NotImplementedException();
+            return Task.FromResult($"Got a temperature reading of: [{temperature}] !");
         }
     }
 }

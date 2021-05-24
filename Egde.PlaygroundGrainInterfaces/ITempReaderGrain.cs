@@ -6,6 +6,6 @@ namespace Egde.PlaygroundGrainInterfaces
 {
     public interface ITempReaderGrain : IGrainWithStringKey
     {
-        Task Update(string temperature);
+        Task<string> Update(string temperature);
     }
 }
