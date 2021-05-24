@@ -1,4 +1,4 @@
 ﻿namespace Egde.ApiPollerClient
 {
-    public record AdviceslipSlip(int id, string advice);
+    public record AdviceslipSlip(int Id, string Advice);
 }

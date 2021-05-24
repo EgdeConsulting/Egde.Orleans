@@ -58,7 +58,7 @@ namespace Egde.SiloHost
                 .ConfigureLogging(logging => logging.AddConsole());
 
             builder.AddStartupTask(
-                async (IServiceProvider services, CancellationToken cancellation) =>
+                async (services, _) =>
                 {
                     // Use the service provider to get the grain factory.
                     var grainFactory = services.GetRequiredService<IGrainFactory>();

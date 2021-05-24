@@ -38,7 +38,7 @@ namespace Egde.PlaygroundGrains
         private async Task PullApisRegistered(object _)
         {
             var advice = await _adviceSlipApi.GetRandomAdvice();
-            Console.WriteLine(advice.Slip.advice);
+            Console.WriteLine(advice.Slip.Advice);
         }
     }
 }
