@@ -16,7 +16,7 @@ namespace Egde.SiloTests
         {
             var pong = Silo.AddProbe<ITempReaderOrchestratorGrain>(0);
             var tempReaderGrain = await Silo.CreateGrainAsync<TempReaderGrain>("test-adr");
-            tempReaderGrain.Update("2");
+            await tempReaderGrain.Update("2");
             pong.Verify(x => x.Notify(It.IsAny<string>(), It.IsAny<string>()), Times.Once);
         }
     }

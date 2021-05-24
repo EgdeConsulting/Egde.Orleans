@@ -22,16 +22,17 @@ namespace Egde.PlaygroundGrains
             return base.OnActivateAsync();
         }
 
-        public async Task Init()
+        public Task Init()
         {
             if (_started)
             {
                 Console.WriteLine("I was started");
-                return;
+                return Task.CompletedTask;
             }
             RegisterTimer(PullApisRegistered, null, TimeSpan.Zero, TimeSpan.FromSeconds(2));
             _started = true;
             Console.WriteLine("I wasn't started");
+            return Task.CompletedTask;
         }
 
         private async Task PullApisRegistered(object _)
