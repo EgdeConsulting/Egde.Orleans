@@ -1,5 +1,8 @@
 # Egde.Orleans
-Her er det noen som leker seg med Microsoft Orleans
+Her er det noen som leker seg med Microsoft Orleans.
+
+Bruksområder for Mirosoft Orleans er alt fra å drifte Cloud-providere, til å funke sammen med IoT, til å drive med sportsbetting, til å være en integrasjonsplattform.
+
 >## Orleans is a cross-platform framework for building robust, scalable distributed applications
 >Orleans builds on the developer productivity of .NET and brings it to the world of distributed applications, such as cloud services. Orleans scales from a single on-premises server to globally distributed, highly-available applications in the cloud.
 >
